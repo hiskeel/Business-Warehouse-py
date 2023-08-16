@@ -1,2 +1,2 @@
 id,date,client_name,phone_number,ordered_columns,quantity_columns,ordered_plates,quantity_plates,destination,products_price,delivery_price,avance,vygruzka,procces
-1,2023-08-17 00:26:24.070734,misha,096666666,4,2,chok,5,rivne,1000,800,0,+, in procces
+1,2023-08-17,misha,096666666,4,2,chok,5,rivne,1000,800,0,+, in procces

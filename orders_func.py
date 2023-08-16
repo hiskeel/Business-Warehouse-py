@@ -33,8 +33,9 @@ def Add_order():
     with open('orders_db.csv', 'a', newline='') as file:
         writer = csv.writer(file)
         
-        date = datetime.datetime.now()
-        writer.writerow([int(input("id")),date, input("Enter client name: "), input("Enter client`s phone number: "), input("Enter colums name: "),int(input("Enter colums quantity: ")),input("Enter plates name: "),int(input("Enter plates quantity: ")),input("Enter destination: "),int(input("Enter total sum: ")),int(input("Enter delivery price")),int(input("Enter avance value: ")), input("Will be vygruzka? :"),input("Procces: ") ])
+        curent_datetime = datetime.datetime.now()
+        date = curent_datetime.date()
+        writer.writerow([int(input("Enter id: ")),date, input("Enter client name: "), input("Enter client`s phone number: "), "Column height =>" + input("Enter colums name: "),int(input("Enter colums quantity: ")),input("Enter plates name: "),int(input("Enter plates quantity: ")),input("Enter destination: "),int(input("Enter total sum: ")),int(input("Enter delivery price")),int(input("Enter avance value: ")), input("Will be vygruzka? :"),input("Procces: ") ])
         file.close()
 
         

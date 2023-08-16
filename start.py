@@ -1,27 +1,74 @@
-import os
-import csv
-
-
-
-def main_menu():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    choice = input("WELCOME!\n\nEnter menu point which u want:\n1. Work with warehouse\n2. Search for order\n3. Work with products\n4. Work with orders\n5. Save changes to file\n0. Exit program\n")
-    return choice
-def warehouse_menu():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    choice = input("Next step:\n1. Show all products in warehouse\n2. Sort products by group\n3. Sort products by price\n9. Back\n0. Exit program\n")
-    return choice
-def search_menu():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    choice = input("Next step:\n1. Search by name\n2. Search by group\n3. Search by phone number\n4. Search by destination\n5. Search by date\n9. Back\n0. Exit\n")
-    return choice
-def product_menu():
-    os.system('cls' if os.name == 'nt' else 'clear')
-    choice = input("Next step:\n1. Change quantity\n2. Edit product info\n3. Add new product\n4. Delete product")
-    return choice
+from func import *
 
 exit_program = False
 back = False
 
 while (exit_program != True):
-    
+    back = False
+    choice = main_menu()
+    if choice == 1:
+        while(back != True):
+            choice = warehouse_menu()
+            if choice == 1:
+                show_products()
+                contin = input("Enter any symbol to continue:\n")
+            elif choice == 2:
+                pass
+            elif choice == 3:
+                pass
+            elif choice == 9:
+                back = True
+            elif choice == 0:
+                back = True
+                exit_program = True
+    elif choice == 2:
+        back = False
+        while(back != True):
+            choice = search_menu()
+            if choice == 1:
+                show_products()
+                contin = input("Enter any symbol to continue:\n")
+            elif choice == 2:
+                pass
+            elif choice == 3:
+                pass
+            elif choice == 9:
+                back = True
+            elif choice == 0:
+                back = True
+                exit_program = True
+    elif choice == 3:
+        back = False
+        while(back != True):
+            choice = product_menu()
+            if choice == 1:
+                show_products()
+                contin = input("Enter any symbol to continue:\n")
+            elif choice == 2:
+                Edit_product()
+            elif choice == 3:
+                Add_product()
+            elif choice == 9:
+                back = True
+            elif choice == 0:
+                back = True
+                exit_program = True
+    elif choice == 4:
+        back = False
+        while(back != True):
+            choice = product_menu()
+            if choice == 1:
+                show_products()
+                contin = input("Enter any symbol to continue:\n")
+            elif choice == 2:
+                pass
+            elif choice == 3:
+                pass
+            elif choice == 9:
+                back = True
+            elif choice == 0:
+                back = True
+                exit_program = True
+
+
+

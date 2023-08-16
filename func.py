@@ -37,17 +37,56 @@ def Add_product():
     return 0
 def Edit_product():
     show_products()
-    id = int(input("Enter id of product you want to edit: "))
+    id = input("Enter id of product you want to edit: ")
     with open('products_DB.csv', 'r') as csv_file:
         reader = csv.reader(csv_file)
-        for row in reader:
-            if row[0] == id:
-                with open('product_DB.csv', 'a', newline='') as file:
-                    row[0] = int(input("Enter new id: "))
-                    row[1] = input("Enter new group: ")
-                    row[2] = input("Enter new name: ")
-                    row[3] = int(input("Enter new price: "))
-                    row[4] = int(input("Enter new quantity: "))
-                file.close()
+        my_list = list(reader)
 
-        csv_file.close()
+    # Update the information about the object
+        for row in my_list:
+            if row[0] == id:
+                row[0] = input("Enter new id: ")
+                row[1] = input("Enter new group: ")
+                row[2] = input("Enter new name: ")
+                row[3] = input("Enter new price: ")
+                row[4] = input("Enter new quantity: ")
+                with open('products_DB.csv', 'w', newline='') as file:
+                    writer = csv.writer(file)
+                    writer.writerows(my_list)
+                    file.close()
+    csv_file.close()
+
+def Delete_product():
+    show_products()
+    id = input("Enter id of product you want to DELETE: ")
+    with open('products_DB.csv', 'r') as csv_file:
+        reader = csv.reader(csv_file)
+        my_list = list(reader)
+
+        count = 0
+        for row in my_list:
+            if row[0] == id:
+                my_list.pop(count)
+                with open('products_DB.csv', 'w', newline='') as file:
+                    writer = csv.writer(file)
+                    writer.writerows(my_list)
+                    file.close()
+            count += 1
+    csv_file.close()
+    return 0
+def Change_quantity():
+    show_products()
+    id = input("Enter id of product you want to edit quantity: ")
+    with open('products_DB.csv', 'r') as csv_file:
+        reader = csv.reader(csv_file)
+        my_list = list(reader)
+
+    # Update the information about the object
+        for row in my_list:
+            if row[0] == id:
+                row[4] = input("Enter new quantity: ")
+                with open('products_DB.csv', 'w', newline='') as file:
+                    writer = csv.writer(file)
+                    writer.writerows(my_list)
+                    file.close()
+    csv_file.close()

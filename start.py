@@ -1,5 +1,6 @@
 from func import *
 from orders_func import *
+from search_func import *
 
 exit_program = False
 back = False
@@ -48,10 +49,17 @@ while (exit_program != True):
             while(back != True):
                 choice = search_menu()
                 if choice == '1':
-                    show_products()
-                    contin = input("Enter any symbol to continue:\n")
+                    try:
+                        search_by_name()
+                    except Exception as error:
+                        cont = input(f"Unexcepted error: {error=}, {type(error)=}\nEnter any symbol to continue: ")
+
                 elif choice == '2':
-                    pass
+                    try:
+                        search_by_procces()
+                    except Exception as error:
+                        cont = input(f"Unexcepted error: {error=}, {type(error)=}\nEnter any symbol to continue: ")
+
                 elif choice == '3':
                     pass
                 elif choice == '9':
@@ -119,15 +127,26 @@ while (exit_program != True):
                         Show_orders()
                         contin = input("Enter any symbol to continue:\n")
                     except Exception as err:
-                        print(f"Unexcepted error: {error=}, {type(error)=}")
+                        print(f"Unexcepted error: {err=}, {type(err)=}")
                 elif choice == '2':
                     try:
                         Add_order()
                         contin = input("Enter any symbol to continue:\n")
                     except Exception as err:
-                        print(f"Unexcepted error: {error=}, {type(error)=}")
-                elif choice == '3':
-                    pass
+                        print(f"Unexcepted error: {err=}, {type(err)=}")
+                elif choice =='3':
+                    
+                    try:
+                        Edit_order()
+                        contin = input("Enter any symbol to continue:\n")
+                    except Exception as err:
+                        print(f"Unexcepted error: {err=}, {type(err)=}")
+                elif choice == '4':
+                    try:
+                        Delete_order()
+                        contin = input("Enter any symbol to continue:\n")
+                    except Exception as err:
+                        print(f"Unexcepted error: {err=}, {type(err)=}")
                 elif choice == '9':
                     back = True
                 elif choice == '0':
@@ -143,7 +162,7 @@ while (exit_program != True):
                 else:
                     cont = input("No such menu point\nEnter any symbol to continue: ")
         elif choice == '0':
-            confirmation = input("Are you sure you want to close a program?\n1. Yes\n2. No, stay")
+            confirmation = input("Are you sure you want to close a program?\n1. Yes\n2. No, stay\n")
             if confirmation == '1':
                 print ("Bye!")
                 exit_program = True 

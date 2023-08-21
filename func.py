@@ -13,7 +13,7 @@ def warehouse_menu():
     return choice
 def search_menu():
     os.system('cls')
-    choice = input("Next step:\n1. Search by name\n2. Search by group\n3. Search by phone number\n4. Search by destination\n5. Search by date\n\n9. Back\n0. Exit\n")
+    choice = input("Next step:\n1. Search by name\n2. Search by procces\n3. Search by phone number\n4. Search by destination\n5. Search by date\n\n9. Back\n0. Exit\n")
     os.system('cls')
     return choice
 def product_menu():

@@ -61,7 +61,20 @@ while (exit_program != True):
                         cont = input(f"Unexcepted error: {error=}, {type(error)=}\nEnter any symbol to continue: ")
 
                 elif choice == '3':
-                    pass
+                    try:
+                        search_by_phone()
+                    except Exception as error:
+                        cont = input(f"Unexcepted error: {error=}, {type(error)=}\nEnter any symbol to continue: ")
+                elif choice == '4':
+                    try:
+                        search_by_destination()
+                    except Exception as error:
+                        cont = input(f"Unexcepted error: {error=}, {type(error)=}\nEnter any symbol to continue: ")
+                elif choice == '5':
+                    try:
+                        search_by_date()
+                    except Exception as error:
+                        cont = input(f"Unexcepted error: {error=}, {type(error)=}\nEnter any symbol to continue: ")
                 elif choice == '9':
                     back = True
                 elif choice == '0':

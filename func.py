@@ -30,8 +30,12 @@ def orders_menu():
 def show_products():
     with open('products_DB.csv', 'r') as csv_file:
         reader = csv.reader(csv_file)
-        for row in reader:
-            print(row)
+        my_list = list(reader)
+        it = 1
+        while(it < my_list.__len__()):
+            row = my_list[it]
+            print(f"------------------------------------\nID: {row[0]}\nGroup: {row[1]}\nName: {row[2]}\nPrice: {row[3]}\nQuantity: {row[4]}\n")
+            it +=1
         csv_file.close()
     return 0
 def Add_product():

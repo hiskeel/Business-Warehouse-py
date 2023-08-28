@@ -1,2 +1,4 @@
 id,date,client_name,phone_number,ordered_columns,quantity_columns,ordered_plates,quantity_plates,destination,products_price,delivery_price,avance,vygruzka,procces
-1,2023-08-17,misha,096666666,4,4,kamin,5,rivne,2050,800,0,+,Done
+6,2023-08-23,test,99999999,3,35,bud,10,sarny,9450,1500,0,+,in procces
+2,2023-08-28,test,1,4,800,bud,10,1,194100,1,1,1,1
+4,2023-08-28,4,4,4,4,bud,4,4,1800,4,4,12314,done

@@ -191,11 +191,8 @@ with open('orders_db.csv', 'r') as file:
     t_list = list(reader)
     file.close()
 t = 0
-cl_list ={}
-with open ('client_db.csv', 'r') as file:
-    reader = csv.reader(file)
-    cl_list = list(reader)
-    file.close()
+cl_list =[]
+
 while(t < t_list.__len__()):
     
     row = t_list[t]

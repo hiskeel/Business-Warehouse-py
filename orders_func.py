@@ -87,7 +87,7 @@ def Delete_order():
     return 0
 
 def Edit_order():
-    choice = input("What do you want to edit:\n1.Edit full order\n2. Edit ordered product information\n3. Edit order status\n4. Edit unloading status\n")
+    choice = input("What do you want to edit:\n1. Edit full order\n2. Edit ordered product information\n3. Edit order status\n4. Edit unloading status\n")
     if choice =='1':
         Show_orders()
         id = input("Enter id of order you want to edit: ")

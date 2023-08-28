@@ -185,6 +185,28 @@ while (exit_program != True):
                 pass
     except ValueError as err:
         cont = input(f"Value error: {err=}, {type(err)=}\nEnter any symbol to continue: ")
+t_list =[[]]
+with open('orders_db.csv', 'r') as file:
+    reader = csv.reader(file)
+    t_list = list(reader)
+    file.close()
+t = 0
+cl_list ={}
+with open ('client_db.csv', 'r') as file:
+    reader = csv.reader(file)
+    cl_list = list(reader)
+    file.close()
+while(t < t_list.__len__()):
+    
+    row = t_list[t]
+    row_b= [row[3],row[0],row[2],row[8]]
+    cl_list.append(row_b)
+    t+=1
+with open ('client_db.csv', 'w') as file:
+    writer = csv.writer(file)
+    writer.writerows(cl_list)
+    file.close()
+
     
 
 
